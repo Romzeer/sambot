@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons start>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title *ngIf="userProfile">Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+
+<ion-content padding>
+  <div *ngIf="isLoggedIn; else loginTemplate">
+    <h1>Bonjour {{userProfile.displayName}}!</h1>
+   
+    <p><button ion-button (click)="disconnect()">Logout From Google</button></p>
+  </div>
+
+  <ng-template #loginTemplate>
+    <p><button ion-button >Pas co</button></p>
+  </ng-template>
+</ion-content>
